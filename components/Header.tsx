@@ -4,6 +4,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { useMoralis } from "react-moralis";
+import { RiMenu5Line } from "react-icons/ri";
+import { FaUsers } from "react-icons/fa6";
+import { TiArrowSortedDown } from "react-icons/ti";
+import Link from "next/link";
 
 declare global {
   interface Window {
@@ -59,19 +63,26 @@ const Header = () => {
   const displayWalletsToConnect = () => {};
 
   return (
-    <header className="flex items-center h-[7rem] px-[5rem] font-ptSans">
-      <p className="text-[2rem] font-londrinaSolid ">YUAN</p>
-      <div className="flex">
-        <p>Treasury</p>
-        <p>5000</p>
-      </div>
-      <div className="ml-auto">
+    <header className="flex items-center h-[8rem] px-[5rem] font-ptSans z-20 relative">
+      <Link href={"/"} className="text-[3rem] font-londrinaSolid ">
+        YUAN
+      </Link>
+
+      <div className="ml-auto flex items-center relative">
+        <Link
+          href={"/proposals"}
+          className="font-medium border-color-border border px-[1rem] py-[0.5rem] rounded-xl hover:bg-color-gray-3 transition-all duration-150 ease-in flex items-center mr-[2rem]"
+        >
+          <FaUsers className="text-color-gray-2" />
+          <p className="mx-[1rem] font-medium ">Proposals</p>
+          {/* <TiArrowSortedDown className="w-[2.5rem] h-[2.5rem]" /> */}
+        </Link>
         <button
           type="button"
           onClick={displayWalletsToConnect}
-          className="font-normal"
+          className="font-medium border-color-border border px-[1rem] py-[0.5rem] rounded-xl hover:bg-color-gray-3 transition-all duration-150 ease-in"
         >
-          {account ? account.substring(0, 6) : "Connect Wallet"}
+          {account ? account.substring(0, 6) : "Connect"}
         </button>
       </div>
     </header>

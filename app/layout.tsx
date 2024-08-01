@@ -31,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${londrinaSolid.variable} ${ptSans.variable}`}>
+      <body
+        className={`${londrinaSolid.variable} ${ptSans.variable} bg-color-white relative`}
+      >
         <ProviderMoralis>
           <Header />
           {children}
