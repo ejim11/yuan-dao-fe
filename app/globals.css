@@ -24,7 +24,7 @@ img {
   max-width: 100%;
 }
 
-.filter {
+.blur-item {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
