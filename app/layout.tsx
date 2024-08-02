@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import ProviderMoralis from "@/components/ProviderMoralis";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
+import ReduxWrapper from "@/components/ReduxWrapper";
+import ConnectWalletModal from "@/components/ConnectWalletModal";
 
 const londrinaSolid: NextFontWithVariable = Londrina_Solid({
   subsets: ["latin"],
@@ -34,10 +36,13 @@ export default function RootLayout({
       <body
         className={`${londrinaSolid.variable} ${ptSans.variable} bg-color-white relative`}
       >
-        <ProviderMoralis>
-          <Header />
-          {children}
-        </ProviderMoralis>
+        <ReduxWrapper>
+          <ProviderMoralis>
+            <ConnectWalletModal />
+            <Header />
+            {children}
+          </ProviderMoralis>
+        </ReduxWrapper>
       </body>
     </html>
   );
