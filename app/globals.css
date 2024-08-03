@@ -28,3 +28,51 @@ img {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+
+/* scroll stylings */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar {
+  height: 1rem;
+  /* @media all and (max-width: 700px) {
+    height: 1rem;
+  } */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #8c8d92;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f4f4f8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* react paginate */
+.paginate-page-link {
+  border: 1px solid #dc9e46;
+  color: #dc9e46;
+  background-color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+.paginate-page-link:hover {
+  color: #fff;
+  background-color: #dc9e46;
+}
+
+.paginate-page-link.paginate-active-page-link {
+  background-color: #dc9e46;
+  color: #fff;
+}
