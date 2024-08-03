@@ -3,6 +3,7 @@ import React from "react";
 import { Proposal } from "./data/proposalData";
 import calculateDifferenceInDays from "./utils/calculateDifferenceInDate";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const ProposalItem = ({ id, title, startTime, endTime }: Proposal) => {
   const btnStylings: any = {
@@ -23,7 +24,13 @@ const ProposalItem = ({ id, title, startTime, endTime }: Proposal) => {
     : "completed";
 
   return (
-    <li className="w-full flex items-center border border-color-border p-[2rem] mb-[2rem] rounded-xl bg-color-gray-3 hover:bg-color-white duration-150 ease-in transition-all cursor-pointer">
+    <motion.li
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * id }}
+      viewport={{ once: true }}
+      className="w-full flex items-center border border-color-border p-[2rem] mb-[2rem] rounded-xl bg-color-gray-3 hover:bg-color-white duration-150 ease-in transition-all cursor-pointer"
+    >
       <p className="text-color-gray-2 text-[1.8rem] font-medium mr-[1.5rem]">
         {id}
       </p>
@@ -41,7 +48,7 @@ const ProposalItem = ({ id, title, startTime, endTime }: Proposal) => {
       >
         {status}
       </p>
-    </li>
+    </motion.li>
   );
 };
 

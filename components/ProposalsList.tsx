@@ -5,8 +5,24 @@ import ProposalItem from "./ProposalItem";
 import ReactPaginate from "react-paginate";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useAppSelector } from "@/hooks/customHook";
+import { motion } from "framer-motion";
 
 const ProposalsList = () => {
+//   const list = {
+//     visible: {
+//       opacity: 1,
+//       transition: {
+//         when: "beforeChildren",
+//         staggerChildren: 0.3,
+//       },
+//     },
+//     hidden: {
+//       opacity: 0,
+//       transition: {
+//         when: "afterChildren",
+//       },
+//     },
+//   };
   const { proposals } = useAppSelector((state) => state.proposal);
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -28,7 +44,7 @@ const ProposalsList = () => {
     <div>
       {currentItems.length > 0 ? (
         <>
-          <ul className="pt-[3rem]">
+          <motion.ul className="pt-[3rem]">
             {currentItems.map((proposal: Proposal) => (
               <ProposalItem
                 key={proposal.id}
@@ -38,7 +54,7 @@ const ProposalsList = () => {
                 endTime={proposal.endTime}
               />
             ))}
-          </ul>
+          </motion.ul>
           {/* react paginate */}
           <div className="flex mt-[2rem] w-full pt-[3.5rem] pb-[3rem]  justify-end">
             <ReactPaginate
