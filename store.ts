@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import walletSlice from "./slices/walletSlice";
+import proposalSlice from "./slices/proposalsSlice";
 
 const store = configureStore({
   reducer: {
     wallet: walletSlice.reducer,
+    proposal: proposalSlice.reducer,
   },
 });
 
