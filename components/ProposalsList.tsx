@@ -8,21 +8,21 @@ import { useAppSelector } from "@/hooks/customHook";
 import { motion } from "framer-motion";
 
 const ProposalsList = () => {
-//   const list = {
-//     visible: {
-//       opacity: 1,
-//       transition: {
-//         when: "beforeChildren",
-//         staggerChildren: 0.3,
-//       },
-//     },
-//     hidden: {
-//       opacity: 0,
-//       transition: {
-//         when: "afterChildren",
-//       },
-//     },
-//   };
+  //   const list = {
+  //     visible: {
+  //       opacity: 1,
+  //       transition: {
+  //         when: "beforeChildren",
+  //         staggerChildren: 0.3,
+  //       },
+  //     },
+  //     hidden: {
+  //       opacity: 0,
+  //       transition: {
+  //         when: "afterChildren",
+  //       },
+  //     },
+  //   };
   const { proposals } = useAppSelector((state) => state.proposal);
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -45,13 +45,14 @@ const ProposalsList = () => {
       {currentItems.length > 0 ? (
         <>
           <motion.ul className="pt-[3rem]">
-            {currentItems.map((proposal: Proposal) => (
+            {currentItems.map((proposal: Proposal, index: number) => (
               <ProposalItem
                 key={proposal.id}
                 id={proposal.id}
                 title={proposal.title}
                 startTime={proposal.startTime}
                 endTime={proposal.endTime}
+                index={index}
               />
             ))}
           </motion.ul>

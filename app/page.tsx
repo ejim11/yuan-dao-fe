@@ -1,11 +1,17 @@
 "use client";
 import ProposalsList from "@/components/ProposalsList";
-import { useAppSelector } from "@/hooks/customHook";
-import Image from "next/image";
+import { useAppDispatch, useAppSelector } from "@/hooks/customHook";
+import { proposalActions } from "@/slices/proposalsSlice";
 import { RiMenu4Line } from "react-icons/ri";
 
 export default function Home() {
   const { account } = useAppSelector((state) => state.wallet);
+
+  const dispatch = useAppDispatch();
+
+  const displayCreateProposalModal = () => {
+    dispatch(proposalActions.toggleCreateProposalModal(true));
+  };
 
   return (
     <main className=" min-h-screen w-full  font-ptSans">
@@ -56,6 +62,7 @@ export default function Home() {
               <button
                 type="button"
                 className="px-[1rem] py-[0.5rem] rounded-xl border-color-gold bg-color-gold border text-color-white text-[1.8rem] hover:bg-color-white hover:text-color-gold transition-all duration-150 ease-in"
+                onClick={displayCreateProposalModal}
               >
                 Create Proposal
               </button>

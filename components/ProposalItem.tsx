@@ -5,7 +5,7 @@ import calculateDifferenceInDays from "./utils/calculateDifferenceInDate";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
 import { motion } from "framer-motion";
 
-const ProposalItem = ({ id, title, startTime, endTime }: Proposal) => {
+const ProposalItem = ({ id, title, startTime, endTime, index }: any) => {
   const btnStylings: any = {
     pending: "bg-color-green ",
     active: "bg-color-blue",
@@ -32,7 +32,7 @@ const ProposalItem = ({ id, title, startTime, endTime }: Proposal) => {
       className="w-full flex items-center border border-color-border p-[2rem] mb-[2rem] rounded-xl bg-color-gray-3 hover:bg-color-white duration-150 ease-in transition-all cursor-pointer"
     >
       <p className="text-color-gray-2 text-[1.8rem] font-medium mr-[1.5rem]">
-        {id}
+        {index + 1}
       </p>
       <p className="flex-1 text-[2rem] font-semibold">{title}</p>
 

@@ -1,5 +1,5 @@
 export interface Proposal {
-  id: number;
+  id: number | string;
   title: string;
   startTime: string;
   endTime: string;

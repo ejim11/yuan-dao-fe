@@ -76,3 +76,14 @@ img {
   background-color: #dc9e46;
   color: #fff;
 }
+
+/* input date styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url("../assets/calendar.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}
