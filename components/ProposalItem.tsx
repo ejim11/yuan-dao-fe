@@ -4,8 +4,11 @@ import { Proposal } from "./data/proposalData";
 import calculateDifferenceInDays from "./utils/calculateDifferenceInDate";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
-const ProposalItem = ({ id, title, startTime, endTime, index }: any) => {
+const ProposalItem = ({ id, title, startTime, endTime, index, slug }: any) => {
+  const router = useRouter();
+
   const btnStylings: any = {
     pending: "bg-color-green ",
     active: "bg-color-blue",
@@ -23,6 +26,10 @@ const ProposalItem = ({ id, title, startTime, endTime, index }: any) => {
       : "pending"
     : "completed";
 
+  const navigateToProposalDetailHandler = () => {
+    router.push(`/${slug}`);
+  };
+
   return (
     <motion.li
       initial={{ y: 30, opacity: 0 }}
@@ -30,6 +37,7 @@ const ProposalItem = ({ id, title, startTime, endTime, index }: any) => {
       transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * id }}
       viewport={{ once: true }}
       className="w-full flex items-center border border-color-border p-[2rem] mb-[2rem] rounded-xl bg-color-gray-3 hover:bg-color-white duration-150 ease-in transition-all cursor-pointer"
+      onClick={navigateToProposalDetailHandler}
     >
       <p className="text-color-gray-2 text-[1.8rem] font-medium mr-[1.5rem]">
         {index + 1}

@@ -27,6 +27,7 @@ const CreateProposalForm = () => {
       title: proposalTitle,
       startTime: startDate,
       endTime: endDate,
+      slug: `yuan-${Math.random().toFixed(10)}`,
     };
 
     dispatch(proposalActions.toggleCreateProposalModal(false));

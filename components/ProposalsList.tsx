@@ -53,6 +53,7 @@ const ProposalsList = () => {
                 startTime={proposal.startTime}
                 endTime={proposal.endTime}
                 index={index}
+                slug={proposal.slug}
               />
             ))}
           </motion.ul>
