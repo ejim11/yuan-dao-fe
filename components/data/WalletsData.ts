@@ -21,16 +21,16 @@ const walletsData: WalletData[] = [
     icon: trustWalletImg,
     alt: "trust wallet image",
   },
-  {
-    name: "Ledger",
-    icon: ledgerImg,
-    alt: "ledger image",
-  },
-  {
-    name: "Coinbase",
-    icon: coinbaseImg,
-    alt: "coinbase image",
-  },
+  // {
+  //   name: "Ledger",
+  //   icon: ledgerImg,
+  //   alt: "ledger image",
+  // },
+  // {
+  //   name: "Coinbase",
+  //   icon: coinbaseImg,
+  //   alt: "coinbase image",
+  // },
 ];
 
 export default walletsData;

@@ -11,7 +11,7 @@ import { ethers } from "ethers";
 const ConnectWalletModal = () => {
   const dispatch = useAppDispatch();
 
-  const connectMetamaskWallet = async (e: any) => {
+  const connectWallet = async (e: any) => {
     if (window.ethereum) {
       try {
         // Request account access if needed
@@ -46,10 +46,6 @@ const ConnectWalletModal = () => {
       dispatch(walletActions.toggleWalletModal(false));
     }
   };
-
-  const connectFunctions: MouseEventHandler<HTMLButtonElement>[] = [
-    connectMetamaskWallet,
-  ];
 
   return (
     <motion.div
@@ -87,7 +83,7 @@ const ConnectWalletModal = () => {
           {walletsData.map((wallet: WalletData, i: number) => (
             <button
               key={wallet.name}
-              onClick={connectFunctions[i]}
+              onClick={connectWallet}
               className="flex items-center w-[45%] mb-[3rem] bg-[hsla(0,0%,100%,.7)] justify-center py-[.5rem] rounded-xl hover:bg-color-blue hover:text-color-gray-3 transition-all duration-150 ease-in"
             >
               <div className="w-auto h-[3rem]  mr-[1.5rem] ">
