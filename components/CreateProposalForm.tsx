@@ -60,8 +60,10 @@ const CreateProposalForm = () => {
               type="date"
               name="start-date"
               id="start-date"
+              min={new Date().toISOString().split("T")[0]}
               value={startDate}
               onChange={(e: any) => {
+                console.log(e.target.value);
                 setStartDate(e.target.value);
               }}
               className={inputDateClassName}

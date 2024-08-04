@@ -81,6 +81,7 @@ img {
 input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
   opacity: 1;
+  cursor: pointer;
   display: block;
   background: url("../assets/calendar.svg") no-repeat;
   width: 20px;
